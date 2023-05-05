@@ -1,8 +1,8 @@
-%define major 2
+%define major 1
 
 #define snapshot 20220106
-%define libname %mklibname mauikit-terminal
-%define devname %mklibname -d mauikit-terminal
+%define libname %mklibname MauiKitTerminal
+%define devname %mklibname -d MauiKitTerminal
 
 Name:		mauikit-terminal
 Version:	1.0.0
@@ -69,7 +69,7 @@ Library files for mauikit-terminal
 %package -n %{devname}
 Summary:	Development files for mauikit-terminal
 Group:		Development/KDE and Qt
-Requires:	%{name} = %{EVRD}
+Requires:	%{libname} = %{EVRD}
 
 %description -n %{devname}
 Development files for mauikit-terminal
@@ -84,6 +84,11 @@ Development files for mauikit-terminal
 %install
 %ninja_install -C build
 
-#find_lang mauikitaccounts
+%files -n %{libname}
+%{_libdir}/libMauiKitTerminal.so.%{major}
+%{_libdir}/qt5/qml/org/mauikit/
 
-%files
+%files -n %{devname}
+%{_includedir}/MauiKit/Terminal/
+%{_libdir}/cmake/MauiKitTerminal/
+%{_libdir}/libMauiKitTerminal.so
