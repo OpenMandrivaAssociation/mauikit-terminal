@@ -53,14 +53,12 @@ BuildRequires:	cmake(Qt5WebEngine)
 BuildRequires:	qt5-qtgraphicaleffects
 BuildRequires:	qt5-qtdeclarative
 BuildRequires:	qt5-qtquickcontrols2
-Requires:	%{libname} = %{EVRD}
 
 %description
 Library for developing MAUI Terminal applications
 
 %package -n %{libname}
 Summary:	Library files for Maui Terminal
-Requires:	%{name} = %{EVRD}
 
 %description -n %{libname}
 Library files for mauikit-terminal
