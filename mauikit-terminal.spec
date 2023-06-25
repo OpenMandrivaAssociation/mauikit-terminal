@@ -82,7 +82,9 @@ Development files for mauikit-terminal
 %install
 %ninja_install -C build
 
-%files -n %{libname}
+%find_lang mauikitterminal
+
+%files -n %{libname} -f mauikitterminal.lang
 %{_libdir}/libMauiKitTerminal.so.%{major}*
 %{_libdir}/qt5/qml/org/mauikit/
 
