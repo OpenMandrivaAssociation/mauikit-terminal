@@ -1,14 +1,14 @@
-%define major 1
+%define major 3
 
 #define snapshot 20220106
 %define libname %mklibname MauiKitTerminal
 %define devname %mklibname -d MauiKitTerminal
 
 Name:		mauikit-terminal
-Version:	1.1.0
+Version:	3.0.2
 Release:	%{?snapshot:0.%{snapshot}.}1
 Summary:	Terminal support components for Maui applications
-Url:		http://mauikit.org/
+Url:		https://mauikit.org/
 Source0:	https://invent.kde.org/maui/mauikit-terminal/-/archive/%{?snapshot:master/mauikit-terminal-master.tar.bz2#/mauikit-terminal-%{snapshot}.tar.bz2}%{!?snapshot:v%{version}/mauikit-terminal-v%{version}.tar.bz2}
 
 License:	LGPL-2.1-or-later, CC0 1.0, BSD-2-Clause
@@ -16,7 +16,7 @@ Group:		Applications/Productivity
 BuildRequires:	cmake
 BuildRequires:	ninja
 BuildRequires:	cmake(ECM)
-BuildRequires:  cmake(MauiKit)
+BuildRequires:  cmake(MauiKit3)
 BuildRequires:	cmake(Qt5Qml)
 BuildRequires:	cmake(Qt5Sql)
 BuildRequires:	cmake(Qt5Core)
@@ -85,10 +85,10 @@ Development files for mauikit-terminal
 %find_lang mauikitterminal
 
 %files -n %{libname} -f mauikitterminal.lang
-%{_libdir}/libMauiKitTerminal.so.%{major}*
+%{_libdir}/libMauiKitTerminal3.so.%{major}*
 %{_libdir}/qt5/qml/org/mauikit/
 
 %files -n %{devname}
-%{_includedir}/MauiKit/Terminal/
-%{_libdir}/cmake/MauiKitTerminal/
-%{_libdir}/libMauiKitTerminal.so
+%{_includedir}/MauiKit3/Terminal/
+%{_libdir}/cmake/MauiKitTerminal3/
+%{_libdir}/libMauiKitTerminal3.so
