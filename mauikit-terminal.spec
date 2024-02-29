@@ -5,7 +5,7 @@
 %define devname %mklibname -d MauiKitTerminal
 
 Name:		mauikit-terminal
-Version:	3.0.2
+Version:	3.1.0
 Release:	%{?snapshot:0.%{snapshot}.}1
 Summary:	Terminal support components for Maui applications
 Url:		https://mauikit.org/
